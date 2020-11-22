@@ -1,8 +1,11 @@
 package com.quiz.anime.animequiz.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.*;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 public class ParentResult {
 
@@ -49,6 +52,15 @@ public class ParentResult {
 
     public void setResults(Set<Result> results) {
         this.results = results;
+    }
+
+    @Override
+    public String toString() {
+        return "ParentResult{" +
+                "id=" + id +
+                ", responseCode=" + responseCode +
+                ", results=" + results +
+                '}';
     }
 }
 
