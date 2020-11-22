@@ -6,16 +6,9 @@ import javax.persistence.*;
 import java.util.*;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Entity
 public class ParentResult {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
     private Integer responseCode;
 
-    @OneToMany
     private Set<Result> results = new HashSet<>();
 
     public ParentResult() {
@@ -30,13 +23,8 @@ public class ParentResult {
         this.results = results;
     }
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+
 
     public Integer getResponseCode() {
         return responseCode;
@@ -57,8 +45,8 @@ public class ParentResult {
     @Override
     public String toString() {
         return "ParentResult{" +
-                "id=" + id +
-                ", responseCode=" + responseCode +
+
+                "responseCode=" + responseCode +
                 ", results=" + results +
                 '}';
     }
