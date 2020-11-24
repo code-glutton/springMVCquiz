@@ -14,7 +14,7 @@ public class User {
     private String email;
     private String password;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private Set<QuizScore> quizScores = new HashSet<>();
 
     public User() {

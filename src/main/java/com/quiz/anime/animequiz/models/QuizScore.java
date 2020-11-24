@@ -13,6 +13,9 @@ public class QuizScore {
 
     private int score;
 
+    public QuizScore() {
+    }
+
     public QuizScore(int score) {
         this.score = score;
     }
