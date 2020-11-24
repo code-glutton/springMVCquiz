@@ -5,7 +5,9 @@ import com.quiz.anime.animequiz.models.User;
 import com.quiz.anime.animequiz.repository.AddUserRepo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -29,19 +31,26 @@ public class indexController {
 
     @RequestMapping("/")
     public String getIndexPage(Model model){
-
         return "index";
     }
 
     @RequestMapping("/quiz")
     public String errorPage(Model model){
+        model.addAttribute("user",new User());
         QuizScore quizScore = new QuizScore();
         quizScore.setScore(1);
         getQuizScores().add(quizScore);
         User user = new User("Ace","emmyodia@gmail.com","Dinesh",getQuizScores());
         addUserRepo.save(user);
-        return "quiz";
+        return "signInUp";
 
+    }
+
+    @PostMapping("/quiz")
+    public String greetingSubmit(@ModelAttribute User user, Model model) {
+        model.addAttribute("user", user);
+        addUserRepo.save(user);
+        return "index";
     }
 
     @RequestMapping("/signup")
