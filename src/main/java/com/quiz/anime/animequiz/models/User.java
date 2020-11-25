@@ -1,6 +1,9 @@
 package com.quiz.anime.animequiz.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,12 +13,18 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotNull
+    @Size(min=2,max=15)
     private String userName;
+
+    @NotNull
+    @Email
     private String email;
+
+    @NotNull
+    @Size(min=5)
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private Set<QuizScore> quizScores = new HashSet<>();
 
     public User() {
     }
@@ -25,14 +34,6 @@ public class User {
         this.email = email;
         this.password = password;
     }
-
-    public User(String userName, String email, String password, Set<QuizScore> quizScores) {
-        this.userName = userName;
-        this.email = email;
-        this.password = password;
-        this.quizScores = quizScores;
-    }
-
     public Long getId() {
         return id;
     }
@@ -63,13 +64,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Set<QuizScore> getQuizScores() {
-        return quizScores;
-    }
-
-    public void setQuizScores(Set<QuizScore> quizScores) {
-        this.quizScores = quizScores;
     }
 }
