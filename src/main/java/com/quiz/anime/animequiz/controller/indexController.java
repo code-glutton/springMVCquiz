@@ -51,12 +51,9 @@ public class indexController {
 
     @PostMapping("/")
     public String greetingSubmit(@Valid @ModelAttribute User user, Model model, BindingResult bindingResult) {
-        if(bindingResult.hasErrors()){
-            return "signInUp";
-        }
         model.addAttribute("user", user);
         addUserRepo.save(user);
-        return "redirect:/index";
+        return "index";
     }
 
 }
