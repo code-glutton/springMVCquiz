@@ -13,6 +13,7 @@ import javax.validation.*;
 
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 @Controller
@@ -34,6 +35,7 @@ public class indexController {
 
     @RequestMapping("/Home")
     public String getIndexPage(Model model){
+
         return "index";
     }
 
@@ -45,7 +47,7 @@ public class indexController {
         getQuizScores().add(quizScore);
         User user = new User("Ace","emmyodia@gmail.com","Dinesh");
 //        addUserRepo.save(user);
-        return "signInUp";
+        return "signIn";
 
     }
 
@@ -53,11 +55,20 @@ public class indexController {
     public String greetingSubmit(@Valid @ModelAttribute User user, Model model, BindingResult bindingResult) {
         System.out.println(user);
         if(bindingResult.hasErrors()){
-            return "signInUp";
+            return "signIn";
         }
-        model.addAttribute("user", user);
-        addUserRepo.save(user);
-        return "redirect:/Home";
+        Optional<User> userGotten = addUserRepo.findByUserName(user.getUserName());
+        if(userGotten.isPresent()){
+            System.out.println(true);
+            return "redirect:/Home";
+        }else{
+            addUserRepo.save(user);
+            System.out.println(false);
+            return "signIn";
+        }
+//        model.addAttribute("user", user);
+//        addUserRepo.save(user);
+
     }
 
 }

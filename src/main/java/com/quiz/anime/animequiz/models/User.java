@@ -8,12 +8,8 @@ import java.util.Set;
 
 @Entity
 public class User {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-
-
-
     @NotEmpty
     private String userName;
 
@@ -33,13 +29,6 @@ public class User {
         this.userName = userName;
         this.email = email;
         this.password = password;
-    }
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getUserName() {
@@ -69,8 +58,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", userName='" + userName + '\'' +
+                "userName='" + userName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 '}';
