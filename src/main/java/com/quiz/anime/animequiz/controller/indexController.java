@@ -44,16 +44,20 @@ public class indexController {
         quizScore.setScore(1);
         getQuizScores().add(quizScore);
         User user = new User("Ace","emmyodia@gmail.com","Dinesh");
-        addUserRepo.save(user);
+//        addUserRepo.save(user);
         return "signInUp";
 
     }
 
     @PostMapping("/")
     public String greetingSubmit(@Valid @ModelAttribute User user, Model model, BindingResult bindingResult) {
+        System.out.println(user);
+        if(bindingResult.hasErrors()){
+            return "signInUp";
+        }
         model.addAttribute("user", user);
         addUserRepo.save(user);
-        return "index";
+        return "redirect:/Home";
     }
 
 }

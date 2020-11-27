@@ -1,9 +1,8 @@
 package com.quiz.anime.animequiz.models;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,15 +12,16 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotNull
-    @Size(min=2,max=15)
+
+
+    @NotEmpty
     private String userName;
 
-    @NotNull
+    @NotBlank
     @Email
     private String email;
 
-    @NotNull
+    @NotBlank
     @Size(min=5)
     private String password;
 
@@ -64,5 +64,15 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
