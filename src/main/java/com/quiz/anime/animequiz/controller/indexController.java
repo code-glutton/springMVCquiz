@@ -6,9 +6,8 @@ import com.quiz.anime.animequiz.repository.AddUserRepo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.*;
+
 import javax.validation.*;
 
 
@@ -33,7 +32,7 @@ public class indexController {
         this.quizScores = quizScores;
     }
 
-    @RequestMapping("/Home")
+    @RequestMapping("/home")
     public String getIndexPage(Model model){
 
         return "index";
@@ -47,7 +46,7 @@ public class indexController {
         getQuizScores().add(quizScore);
         User user = new User("Ace","emmyodia@gmail.com","Dinesh");
 //        addUserRepo.save(user);
-        return "signIn";
+        return "signUp";
 
     }
 
@@ -57,15 +56,24 @@ public class indexController {
         if(userGotten.isPresent()){
             System.out.println(true);
             model.addAttribute("userExist",new String("username Exists"));
-            return "signIn";
+            return "signUp";
         }else{
             addUserRepo.save(user);
             System.out.println(false);
-            return "redirect:/Home";
+            model.addAttribute("user", user);
+            addUserRepo.save(user);
+            return "redirect:/home/"+user.getUserName();
         }
-//        model.addAttribute("user", user);
-//        addUserRepo.save(user);
 
+
+    }
+
+    @GetMapping("/home/{user}")
+    public String displayHomePage(@PathVariable String user, Model model){
+        Optional<User> users = addUserRepo.findByUserName(user);
+        System.out.println( users.get());
+        model.addAttribute("user", users.get());
+        return "index";
     }
 
 }
