@@ -5,6 +5,7 @@
     <title>Sign Up or Log In</title>
 </head>
 <body>
+<p th:text="${userExist}"></p>
 <h1>Form</h1>
 <form action="#" th:action="@{/}" th:object="${user}" method="post">
     <p>Username: <input type="text" th:field="*{userName}" /></p>
