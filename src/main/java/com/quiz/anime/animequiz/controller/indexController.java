@@ -1,5 +1,6 @@
 package com.quiz.anime.animequiz.controller;
 
+import com.quiz.anime.animequiz.models.Login;
 import com.quiz.anime.animequiz.models.QuizScore;
 import com.quiz.anime.animequiz.models.User;
 import com.quiz.anime.animequiz.repository.AddUserRepo;
@@ -62,9 +63,28 @@ public class indexController {
             System.out.println(false);
             model.addAttribute("user", user);
             addUserRepo.save(user);
-            return "redirect:/home/"+user.getUserName();
+            return "redirect:/login";
         }
 
+
+    }
+
+    @GetMapping("/login")
+    public String loginGet(Model model){
+        model.addAttribute("login",new Login());
+        return "login";
+    }
+
+    @PostMapping("/login")
+    public String login(@Valid @ModelAttribute Login login, Model model, BindingResult bindingResult){
+        Optional<User> userGotten = addUserRepo.findByUserName(login.getUserName());
+        if(userGotten.isPresent()){
+            if(userGotten.get().getPassword().equalsIgnoreCase(login.getPassword())){
+                return "redirect:/home/"+login.getUserName();
+            }
+        }
+            model.addAttribute("usernamedoesnotmatch",new String("username or password does not match"));
+            return "login";
 
     }
 

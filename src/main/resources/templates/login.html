@@ -2,12 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.com">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login</title>
 </head>
 <body>
 <div>
-    <form action="#" th:action="@{/login}" th:object="${user}" method="post>
-
+    <p th:text="${usernamedoesnotmatch}"></p>
+    <form action="#" th:action="@{/login}" th:object="${login}" method="post">
+        <input placeholder="Username" type="text" th:field="*{userName}">
+        <input placeholder="Password" type="password" th:field="*{password}">
+        <input type="submit" value="Submit">
     </form>
 </div>
 </body>
