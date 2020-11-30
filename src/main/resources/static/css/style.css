@@ -84,7 +84,6 @@
     border-bottom: 3px solid green ;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
-    color: green;
 }
 
 .content-name{
@@ -96,6 +95,7 @@
 
 .name-form input:focus + .label-name .content-name, .name-form input:valid + .label-name .content-name{
     transform: translateY(-100%);
+    color: green;
 }
 
 .name-form input:focus + .label-name::after, .name-form input:valid + .label-name::after{
