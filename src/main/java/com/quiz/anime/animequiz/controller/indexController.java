@@ -33,11 +33,6 @@ public class indexController {
         this.quizScores = quizScores;
     }
 
-    @RequestMapping("/home")
-    public String getIndexPage(Model model){
-
-        return "index";
-    }
 
     @RequestMapping("/")
     public String errorPage(Model model){

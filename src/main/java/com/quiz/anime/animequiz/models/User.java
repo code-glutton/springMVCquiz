@@ -22,6 +22,7 @@ public class User {
     private String password;
 
 
+
     public User() {
     }
 
@@ -30,6 +31,8 @@ public class User {
         this.email = email;
         this.password = password;
     }
+
+
 
     public String getUserName() {
         return userName;

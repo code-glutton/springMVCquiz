@@ -3,20 +3,28 @@
     padding: 0px;
     box-sizing: border-box;
 }
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+}
 
 .parent{
     display: grid;
     grid-template-columns: repeat(12,1fr);
     grid-template-rows: repeat(12,1fr);
-    border: solid red;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
+    background-image: url("../images/greeting.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .vector-div{
     grid-column: 1/7;
     grid-row: 1/13;
-    border: solid green;
 }
 
 .form-div{
@@ -45,6 +53,7 @@
     -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.75);
     box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    background-color: white;
 }
 
 .name-form{
