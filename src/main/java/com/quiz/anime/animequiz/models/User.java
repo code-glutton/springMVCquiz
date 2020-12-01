@@ -21,6 +21,7 @@ public class User {
     @Size(min=5)
     private String password;
 
+    private int score;
 
     public User() {
     }
@@ -29,6 +30,13 @@ public class User {
         this.userName = userName;
         this.email = email;
         this.password = password;
+    }
+
+    public User(@NotEmpty String userName, @NotBlank @Email String email, @NotBlank @Size(min = 5) String password, int score) {
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+        this.score = score;
     }
 
     public String getUserName() {
@@ -55,12 +63,21 @@ public class User {
         this.password = password;
     }
 
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "userName='" + userName + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
+                ", score=" + score +
                 '}';
     }
 }
