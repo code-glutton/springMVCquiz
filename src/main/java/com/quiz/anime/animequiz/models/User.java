@@ -23,6 +23,7 @@ public class User {
 
     private int score;
 
+
     public User() {
     }
 
@@ -32,12 +33,6 @@ public class User {
         this.password = password;
     }
 
-    public User(@NotEmpty String userName, @NotBlank @Email String email, @NotBlank @Size(min = 5) String password, int score) {
-        this.userName = userName;
-        this.email = email;
-        this.password = password;
-        this.score = score;
-    }
 
     public String getUserName() {
         return userName;

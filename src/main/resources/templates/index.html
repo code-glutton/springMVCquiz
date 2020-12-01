@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
-    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.min.css} "/>
-    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="../static/css/index.css" th:href="@{/css/index.css}">
 </head>
 <body>
-<p th:text="${user.userName}">no user</p>
+<div id="home">
+    <a href='quiz.html'><button id="start" >Start Quiz</button></a>
+    <p>HighScore: <span></span></p>
+</div>
 </body>
 </html>
