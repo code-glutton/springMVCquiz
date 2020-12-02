@@ -91,4 +91,8 @@ public class indexController {
         return "index";
     }
 
+    @GetMapping("/home/{user}/quiz")
+    public String displayQuiz(Model model){
+        return "quiz";
+    }
 }

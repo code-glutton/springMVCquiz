@@ -6,8 +6,11 @@
     <link rel="stylesheet" href="../static/css/index.css" th:href="@{/css/index.css}">
 </head>
 <body>
+<script th:inline="javascript">
+    var nameJs = [[${user}]];
+</script>
 <div id="home">
-    <a href='quiz.html'><button id="start" >Start Quiz</button></a>
+    <a href='quiz.html' th:href="@{/home/${user.userName}/quiz}"><button id="start" >Start Quiz</button></a>
     <p>HighScore: <span th:text="${user.score}"></span></p>
 </div>
 </body>
