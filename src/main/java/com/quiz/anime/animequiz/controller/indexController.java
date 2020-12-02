@@ -92,7 +92,9 @@ public class indexController {
     }
 
     @GetMapping("/home/{user}/quiz")
-    public String displayQuiz(Model model){
+    public String displayQuiz(@PathVariable String user ,Model model){
+        Optional<User> users = addUserRepo.findByUserName(user);
+        model.addAttribute("user", users.get().getUserName());
         return "quiz";
     }
 }

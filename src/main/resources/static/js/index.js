@@ -9,10 +9,13 @@ let formTagFetch = document.getElementById("quizReg");
 console.log(formTagFetch);
 
 let no = 1;
-
+let users = "";
 const submitedAns = [];
 const scoreAns = [];
 
+const getModelAttr = (user) => {
+    users = user;
+}
 // this function is what picks the selected answer
 const getAnswer = (id,id2,id3,id4) => {
     if (document.getElementById(id).checked) {
@@ -121,7 +124,7 @@ const request = async () => {
             text: scoreAns.length*10 + "%"
         });
         console.log(submitedAns);
-        window.location.replace("/home/{user}");
+        window.location.replace("/home/"+users);
     })
 
 }

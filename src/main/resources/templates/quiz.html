@@ -5,6 +5,9 @@
     <title>Quiz</title>
 </head>
 <body>
+<script th:inline="javascript">
+    var nameJs = [[${user}]];
+</script>
 <div id='main'>
     <h2 id="header"></h2>
     <form id="quizReg">
@@ -12,7 +15,7 @@
     </form>
     <div id="butto">
         <button id="change">Next</button>
-        <button id="submit">Submit</button>
+        <button id="submit" th:onclick="getModelAttr(nameJs);">Submit</button>
     </div>
 </div>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
