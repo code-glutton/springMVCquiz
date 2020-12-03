@@ -124,9 +124,10 @@ const request = async () => {
             text: scoreAns.length*10 + "%"
         });
         console.log(submitedAns);
-        window.location.replace("/home/"+users);
-    })
+        alert(scoreAns.length*10 + "%");
 
+    })
+    // window.location.replace("/home/"+users);
 }
 
 
