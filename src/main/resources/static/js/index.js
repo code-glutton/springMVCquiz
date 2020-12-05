@@ -86,7 +86,7 @@ const renderFunct = (jsonData,indexArrNo,formTagFetch) => {
 
 // this function makes the fetch api synchronous
 const request = async () => {
-    const response = await fetch('https://opentdb.com/api.php?amount=10&category=31&type=multiple');
+    const response = await fetch('https://opentdb.com/api.php?amount=10&type=multiple');
     const json = await response.json();
     console.log("res", json.results);
 
@@ -125,9 +125,9 @@ const request = async () => {
         });
         console.log(submitedAns);
         alert(scoreAns.length*10 + "%");
-
+        window.location.replace("/home/"+users);
     })
-    // window.location.replace("/home/"+users);
+
 }
 
 
