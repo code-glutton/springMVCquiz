@@ -116,8 +116,6 @@ const request = async () => {
         }
 
     });
-
-    });
         swal({
             icon: "success",
             title: "Your Score is",
@@ -125,7 +123,21 @@ const request = async () => {
         });
         console.log(submitedAns);
         alert(scoreAns.length*10 + "%");
-        window.location.replace("/home/"+users);
+
+            let _data = {
+                userScore:scoreAns.length*10
+            }
+
+            fetch('/home/{user}/quiz', {
+                method: "POST",
+                body: JSON.stringify(_data),
+                headers: {"Content-type": "application/json; charset=UTF-8"}
+            })
+                .then(response => response.json())
+                .then(json => console.log(json))
+                .catch(err => console.log(err));
+
+        });
     })
 
 }

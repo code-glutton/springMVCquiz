@@ -37,11 +37,6 @@ public class indexController {
     @RequestMapping("/")
     public String errorPage(Model model){
         model.addAttribute("user",new User());
-        QuizScore quizScore = new QuizScore();
-        quizScore.setScore(1);
-        getQuizScores().add(quizScore);
-        User user = new User("Ace","emmyodia@gmail.com","Dinesh");
-//        addUserRepo.save(user);
         return "signUp";
 
     }
@@ -96,5 +91,11 @@ public class indexController {
         Optional<User> users = addUserRepo.findByUserName(user);
         model.addAttribute("user", users.get().getUserName());
         return "quiz";
+    }
+
+    @PostMapping("/home/{user}/quiz")
+    public String postQuizScore(@RequestBody QuizScore score){
+        System.out.println(score.getUserScore());
+        return "";
     }
 }
