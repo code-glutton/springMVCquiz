@@ -94,8 +94,12 @@ public class indexController {
     }
 
     @PostMapping("/home/{user}/quiz")
-    public String postQuizScore(@RequestBody QuizScore score){
+    public String postQuizScore(@RequestBody QuizScore score,@PathVariable String user){
         System.out.println(score.getUserScore());
+        Optional<User> users = addUserRepo.findByUserName(user);
+       users.get();
+//        userUp.setScore(score.getUserScore());
+//        addUserRepo.save(userUp);
         return "";
     }
 }
