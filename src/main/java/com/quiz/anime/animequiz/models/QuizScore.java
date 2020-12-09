@@ -9,12 +9,14 @@ import javax.persistence.Id;
 public class QuizScore {
 
     private int userScore;
+    private String user;
 
     public QuizScore() {
     }
 
-    public QuizScore(int userScore) {
+    public QuizScore(int userScore,String user) {
         this.userScore = userScore;
+        this.user = user;
     }
 
     public int getUserScore() {
@@ -23,6 +25,14 @@ public class QuizScore {
 
     public void setUserScore(int userScore) {
         this.userScore = userScore;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 
     @Override

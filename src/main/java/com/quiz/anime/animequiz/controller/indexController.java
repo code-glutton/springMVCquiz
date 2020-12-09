@@ -96,8 +96,10 @@ public class indexController {
     @PostMapping("/home/{user}/quiz")
     public String postQuizScore(@RequestBody QuizScore score,@PathVariable String user){
         System.out.println(score.getUserScore());
+        System.out.println(score.getUser());
         Optional<User> users = addUserRepo.findByUserName(user);
-       users.get();
+        System.out.println(user);
+       System.out.println(users.isPresent());
 //        userUp.setScore(score.getUserScore());
 //        addUserRepo.save(userUp);
         return "";

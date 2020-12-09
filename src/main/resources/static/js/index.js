@@ -126,10 +126,11 @@ const request = async () => {
         alert(scoreAns.length*10 + "%");
 
         let _data = {
-            userScore:scoreAns.length*10
+            userScore:scoreAns.length*10,
+            user:users
         }
 
-        fetch('/home/{user}/quiz', {
+        fetch(`/home/${users}/quiz`, {
             method: "POST",
             body: JSON.stringify(_data),
             headers: {"Content-type": "application/json; charset=UTF-8"}
