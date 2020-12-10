@@ -97,11 +97,12 @@ public class indexController {
     public String postQuizScore(@RequestBody QuizScore score,@PathVariable String user){
         System.out.println(score.getUserScore());
         System.out.println(score.getUser());
-        Optional<User> users = addUserRepo.findByUserName(user);
-        System.out.println(user);
+        Optional<User> users = addUserRepo.findByUserName(score.getUser());
+        System.out.println(users.get());
+        User userUp = users.get();
        System.out.println(users.isPresent());
-//        userUp.setScore(score.getUserScore());
-//        addUserRepo.save(userUp);
+        userUp.setScore(score.getUserScore());
+       addUserRepo.save(userUp);
         return "";
     }
 }
