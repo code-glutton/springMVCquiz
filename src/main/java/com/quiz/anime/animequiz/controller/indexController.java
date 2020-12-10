@@ -103,6 +103,6 @@ public class indexController {
        System.out.println(users.isPresent());
         userUp.setScore(score.getUserScore());
        addUserRepo.save(userUp);
-        return "";
+        return "index";
     }
 }
