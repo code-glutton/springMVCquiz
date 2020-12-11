@@ -111,7 +111,8 @@ const request = async () => {
         getAnswer(0,1,2,3);
         json.results.map(x => {
             return submitedAns.map(y => {
-                if(x.correct_answer === y){
+                if((x.correct_answer === y) && (submitedAns.length <= 10)){
+                    console.log(scoreAns.length);
             scoreAns.push(y);
         }
 
@@ -136,7 +137,7 @@ const request = async () => {
             headers: {"Content-type": "application/json; charset=UTF-8"}
         })
             .then(response => response.json())
-            .then(json => console.log(json))
+            .then(json => window.location.replace(`/home/${users}`))
             .catch(err => console.log(err));
     })
 

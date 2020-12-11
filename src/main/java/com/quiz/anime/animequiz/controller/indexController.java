@@ -4,10 +4,12 @@ import com.quiz.anime.animequiz.models.Login;
 import com.quiz.anime.animequiz.models.QuizScore;
 import com.quiz.anime.animequiz.models.User;
 import com.quiz.anime.animequiz.repository.AddUserRepo;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.*;
 
@@ -93,8 +95,8 @@ public class indexController {
         return "quiz";
     }
 
-    @PostMapping("/home/{user}/quiz")
-    public String postQuizScore(@RequestBody QuizScore score,@PathVariable String user){
+    @PostMapping(path = "/home/{user}/quiz" , consumes = "application/json")
+    public String postQuizScore(@RequestBody QuizScore score, @PathVariable String user, Model model){
         System.out.println(score.getUserScore());
         System.out.println(score.getUser());
         Optional<User> users = addUserRepo.findByUserName(score.getUser());
@@ -103,6 +105,8 @@ public class indexController {
        System.out.println(users.isPresent());
         userUp.setScore(score.getUserScore());
        addUserRepo.save(userUp);
-        return "index";
+        return "redirect:/login";
     }
-}
+    }
+
+
