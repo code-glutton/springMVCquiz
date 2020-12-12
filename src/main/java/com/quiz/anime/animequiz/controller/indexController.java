@@ -96,17 +96,18 @@ public class indexController {
     }
 
     @PostMapping(path = "/home/{user}/quiz" , consumes = "application/json")
-    public String postQuizScore(@RequestBody QuizScore score, @PathVariable String user, Model model){
+    public void postQuizScore(@RequestBody QuizScore score){
         System.out.println(score.getUserScore());
         System.out.println(score.getUser());
         Optional<User> users = addUserRepo.findByUserName(score.getUser());
         System.out.println(users.get());
         User userUp = users.get();
        System.out.println(users.isPresent());
-        userUp.setScore(score.getUserScore());
-       addUserRepo.save(userUp);
-        return "redirect:/login";
+       if(userUp.getScore() > score.getUserScore()){
+           userUp.setScore(score.getUserScore());
+           addUserRepo.save(userUp);
+       }
     }
-    }
+}
 
 

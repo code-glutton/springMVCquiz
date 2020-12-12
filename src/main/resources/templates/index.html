@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../static/css/index.css" th:href="@{/css/index.css}">
 </head>
 <body>
+<button>Log Out</button>
 <div id="home">
     <a href='quiz.html' th:href="@{|/home/${user.userName}/quiz|}"><button id="start" >Start Quiz</button></a>
     <p>HighScore: <span th:text="${user.score}"></span></p>
