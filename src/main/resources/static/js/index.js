@@ -136,8 +136,7 @@ const request = async () => {
             body: JSON.stringify(_data),
             headers: {"Content-type": "application/json; charset=UTF-8"}
         })
-            .then(response => response.json())
-            .then(json => window.location.replace(`/home/${users}`))
+            .then(response => window.location.replace(`/home/${users}`))
             .catch(err => console.log(err));
     })
 
