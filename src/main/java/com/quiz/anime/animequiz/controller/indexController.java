@@ -95,7 +95,7 @@ public class indexController {
         return "quiz";
     }
 
-    @PostMapping(path = "/home/{user}/quiz" , consumes = "application/json")
+    @PostMapping("/home/{user}/quiz")
     public void postQuizScore(@RequestBody QuizScore score){
         System.out.println(score.getUserScore());
         System.out.println(score.getUser());
@@ -103,10 +103,16 @@ public class indexController {
         System.out.println(users.get());
         User userUp = users.get();
        System.out.println(users.isPresent());
-       if(userUp.getScore() > score.getUserScore()){
+       if(userUp.getScore() < score.getUserScore()){
            userUp.setScore(score.getUserScore());
            addUserRepo.save(userUp);
        }
+    }
+
+    @GetMapping("/leaderboard")
+    public String leaderBoard(Model model){
+        System.out.println(addUserRepo.findAll());
+        return "leaderBoard";
     }
 }
 
