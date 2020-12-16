@@ -14,9 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.validation.*;
 
 
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Controller
 public class indexController {
@@ -111,7 +109,10 @@ public class indexController {
 
     @GetMapping("/leaderboard")
     public String leaderBoard(Model model){
-        System.out.println(addUserRepo.findAll());
+        List<User> users= addUserRepo.findAll();
+        System.out.println(users);
+        users.sort(Comparator.comparing(User::getScore).reversed());
+        System.out.println(users);
         return "leaderBoard";
     }
 }

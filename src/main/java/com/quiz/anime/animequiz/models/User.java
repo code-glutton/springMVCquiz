@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class User {
+public class User{
 
     @Id
     @NotEmpty
@@ -81,4 +81,5 @@ public class User {
                 ", score=" + score +
                 '}';
     }
+
 }
