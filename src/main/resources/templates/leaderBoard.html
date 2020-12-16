@@ -5,6 +5,11 @@
     <title>Leader Board</title>
 </head>
 <body>
-
+<table>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.userName}">334</td>
+        <td th:text="${user.score}">Tasty Goodnees 3</td>
+    </tr>
+</table>
 </body>
 </html>

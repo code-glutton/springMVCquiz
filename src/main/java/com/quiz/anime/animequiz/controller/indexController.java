@@ -113,6 +113,7 @@ public class indexController {
         System.out.println(users);
         users.sort(Comparator.comparing(User::getScore).reversed());
         System.out.println(users);
+        model.addAttribute("users",users);
         return "leaderBoard";
     }
 }
