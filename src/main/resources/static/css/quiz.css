@@ -1,40 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Lato', sans-serif;
+    font-size:5vw;
 }
 
 body{
-    width:100vw;
-    height:100vh;
+    width: 100vw;
+    background-color: green;
 }
 
 #main{
-    width:100%;
-    height:100%;
-    border: solid black;
-}
-
-#timer{
-    margin: 0 auto;
-    height: 15%;
-    width: 30%;
-    border-radius: 90%;
-    border: solid blue;
-}
-
-#header{
-    width: 100%;
-    height: 38%;
     border: solid red;
 }
+#timer{
+    height: 15vh;
+    background-color: burlywood;
+}
+#header{
+    min-height: 37vh;
+    background-color: red;
+}
 #quizReg{
-    width: 100%;
-    height: 37%;
-    border: solid green;
+    height: 38vh;
+    background-color: orange;
 }
 #butto{
-    height: 10%;
-    width: 100%;
-    border: solid orange;
+    height: 10vh;
+    /*background-color: darkblue;*/
 }

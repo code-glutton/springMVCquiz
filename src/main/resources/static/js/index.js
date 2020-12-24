@@ -68,15 +68,18 @@ const renderFunct = (jsonData,indexArrNo,formTagFetch) => {
 
         let divTag = document.createElement("input");
         let div = document.createElement("div");
+        let divContainer = document.createElement("div");
         let label = document.createElement("label");
         divTag.setAttribute('type', 'radio');
         divTag.setAttribute('name', "answer");
         divTag.setAttribute('value', answerArr[randomNo] );
         divTag.setAttribute('id', j);
         div.setAttribute("class","contain");
+        divContainer.setAttribute("class","containDiv");
         label.appendChild(document.createTextNode(answerArr[randomNo]));
-        div.appendChild(divTag);
-        div.appendChild(label);
+        divContainer.appendChild(divTag);
+        divContainer.appendChild(label);
+        div.appendChild(divContainer);
         formTagFetch.appendChild(div);
 
         // this makes sure that options are not repeated by removing any redered option from the array
