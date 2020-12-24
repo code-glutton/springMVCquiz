@@ -14,11 +14,7 @@
         <div>time</div>
     </div>
     <div class="header">
-        <h2 id="header">the question was stated to be so but not so so how do we understand the current situation of things in the country and
-        outside it tthe question was stated to be so but not so so how do we understand the current situation of things in the country and
-            outside it the question was stated to be so but not so so how do we understand the current situation of things in the country and
-            outside it tthe question was stated to be so but not so so how do we understand the current situation of things in the country and
-            outside it t</h2>
+        <h2 id="header"></h2>
     </div>
     <form id="quizReg">
         <div class="contain">
@@ -28,23 +24,29 @@
             </div>
         </div>
         <div class="contain">
-            <input type="radio" id="male1" name="gender" value="male">
-            <label for="male1">Male</label><br>
+            <div class="containDiv">
+                <input type="radio" id="male1" name="gender" value="male">
+                <label for="male1">Male</label><br>
+            </div>
         </div>
         <div class="contain">
-            <input type="radio" id="male2" name="gender" value="male">
-            <label for="male2">Male</label><br>
+            <div class="containDiv">
+                <input type="radio" id="male2" name="gender" value="male">
+                <label for="male2">Male</label><br>
+            </div>
         </div>
         <div class="contain">
-            <input type="radio" id="male3" name="gender" value="male">
-            <label for="male3">Male</label><br>
+            <div class="containDiv">
+                <input type="radio" id="male3" name="gender" value="male">
+                <label for="male3">Male</label><br>
+            </div>
         </div>
     </form>
     <div id="butto">
-        <button id="change">Next</button>
-
-        <button id="submit" th:onclick="getModelAttr(nameJs);">Submit</button>
-
+        <div id="buttonGrp">
+            <button id="change">Next</button>
+            <button id="submit" th:onclick="getModelAttr(nameJs);">Submit</button>
+        </div>
     </div>
 </div>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

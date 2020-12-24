@@ -13,21 +13,82 @@ body{
 }
 
 #main{
+    width: 100%;
     border: solid red;
 }
 #timer{
+    width: 100%;
     height: 15vh;
     background-color: burlywood;
 }
-#header{
+.header{
+    width: 100%;
     min-height: 37vh;
     background-color: red;
+    display: table;
+    padding: 5%;
+
+}
+#header{
+    background-color: #00002e;
+    display: table-cell;
+    vertical-align: middle;
 }
 #quizReg{
+    width: 100%;
     height: 38vh;
     background-color: orange;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 2%;
 }
+
+.contain{
+    width: 100%;
+    height: 23.5%;
+    background-color: cadetblue;
+    display: table;
+    padding: 3%;
+}
+
+.containDiv{
+    border: solid red;
+    display: table-cell;
+    vertical-align: middle;
+}
+
 #butto{
+    width: 100%;
     height: 10vh;
+    display: table;
     /*background-color: darkblue;*/
+    padding: 3%;
+}
+
+#buttonGrp{
+    width: 80%;
+    background-color: orangered;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+button{
+    height: 100%;
+    width: 400px;
+}
+
+button:disabled,
+button[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
+
+input[type="radio"]{
+    margin-top: -10px;
+    vertical-align: middle;
 }
