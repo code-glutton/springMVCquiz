@@ -7,102 +7,104 @@
     font-size:5vw;
 }
 
-/*body{*/
-/*    width: 100vw;*/
-/*    background-color: green;*/
-/*}*/
+body{
+    width: 100vw;
+    background-color: green;
+}
 
-/*#main{*/
-/*    width: 100%;*/
-/*}*/
-/*#timer{*/
-/*    width: 100%;*/
-/*    height: 15vh;*/
-/*    display: table;*/
-/*}*/
+#main{
+    width: 100%;
+}
+#timer{
+    width: 100%;
+    height: 15vh;
+    display: table;
+}
 
-/*#timeDisp{*/
-/*    display: table-cell;*/
-/*    vertical-align: middle;*/
-/*    background-color: white;*/
-/*    text-align: center;*/
-/*    color:#00002e;*/
-/*}*/
+#timeDisp{
+    display: table-cell;
+    vertical-align: middle;
+    background-color: white;
+    text-align: center;
+    color:#00002e;
+}
 
-/*.header{*/
-/*    width: 100%;*/
-/*    min-height: 37vh;*/
-/*    display: table;*/
-/*    padding: 5%;*/
+.header{
+    width: 100%;
+    min-height: 37vh;
+    display: table;
+    padding: 5%;
 
-/*}*/
-/*#header{*/
-/*    background-color: white;*/
-/*    color: #00002e;*/
-/*    display: table-cell;*/
-/*    vertical-align: middle;*/
-/*    text-align: center;*/
-/*    padding: 3%;*/
-/*}*/
-/*#quizReg{*/
-/*    width: 100%;*/
-/*    height: 38vh;*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    align-content: flex-start;*/
-/*    justify-content: space-between;*/
-/*    flex-direction: column;*/
-/*    padding: 2%;*/
-/*}*/
+}
+#header{
+    background-color: white;
+    color: #00002e;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 3%;
+    border-radius: 10px;
+}
+#quizReg{
+    width: 100%;
+    height: 38vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 2%;
+}
 
-/*.contain{*/
-/*    width: 100%;*/
-/*    height: 23.5%;*/
-/*    background-color: #00002e;*/
-/*    display: table;*/
-/*    padding: 3%;*/
-/*    color: white;*/
-/*}*/
+.contain{
+    width: 100%;
+    height: 23.5%;
+    background-color: #00002e;
+    display: table;
+    padding: 3%;
+    color: white;
+    border-radius: 10px;
+}
 
-/*.containDiv{*/
-/*    display: table-cell;*/
-/*    vertical-align: middle;*/
-/*}*/
+.containDiv{
+    display: table-cell;
+    vertical-align: middle;
+}
 
-/*#butto{*/
-/*    width: 100%;*/
-/*    height: 10vh;*/
-/*    display: table;*/
-/*    padding: 3%;*/
-/*}*/
+#butto{
+    width: 100%;
+    height: 10vh;
+    display: table;
+    padding: 3%;
+}
 
-/*#buttonGrp{*/
-/*    width: 80%;*/
-/*    display: table-cell;*/
-/*    vertical-align: middle;*/
-/*    text-align: center;*/
-/*}*/
+#buttonGrp{
+    width: 80%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
 
-/*button{*/
-/*    height: 100%;*/
-/*    width: 400px;*/
-/*    background-color: white;*/
-/*    color: #00002e;*/
-/*    font-weight: bold;*/
-/*}*/
+button{
+    height: 100%;
+    width: 400px;
+    background-color: white;
+    color: #00002e;
+    font-weight: bold;
+}
 
-/*button:disabled,*/
-/*button[disabled]{*/
-/*    border: 1px solid #999999;*/
-/*    background-color: #cccccc;*/
-/*    color: #666666;*/
-/*}*/
+button:disabled,
+button[disabled]{
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
 
-/*input[type="radio"]{*/
-/*    margin-top: -10px;*/
-/*    vertical-align: middle;*/
-/*    margin-right: 10px;*/
-/*}*/
+input[type="radio"]{
+    margin-top: -10px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
 
 @media only screen and (min-width: 1025px) {
     *{
@@ -112,39 +114,88 @@
     body{
         width: 100vw;
         height: 100vh;
-        background-color: green;
     }
 
     #main{
         width: 100%;
         height: 100%;
-        border: solid black;
     }
     #timer{
         width: 100%;
-        background-color: gold;
         height: 15%;
+        display: table;
     }
+
+    #timeDisp{
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        color:#00002e;
+    }
+
     .header{
         width: 100%;
+        display: table;
         height: 37%;
-        background-color: red;
+        padding: 20px;
     }
+
+    #header{
+  background-color: white;
+      color: #00002e;
+     display: table-cell;
+    vertical-align: middle;
+     text-align: center;
+     padding: 3%;}
     #quizReg{
         width: 100%;
         height: 38%;
-        background-color: pink;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: space-between;
+        column-gap: 1%;
     }
 
     .contain{
-        height: 25%;
+        width: 50%;
+        height: 49%;
         border: solid beige;
+        display: table;
+        padding: 10px;
+    }
+
+    .containDiv{
+        display: table-cell;
+        vertical-align: middle;
     }
 
     #butto{
         width: 100%;
         height: 10%;
-        background-color: #00002e;
+        display: table;
+        padding: 10px;
+    }
+
+    #buttonGrp{
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    button{
+        height: 100%;
+        width: 400px;
+        background-color: white;
+        color: #00002e;
+        font-weight: bold;
+    }
+
+    button:disabled,
+    button[disabled]{
+        border: 1px solid #999999;
+        background-color: #cccccc;
+        color: #666666;
     }
 
     input[type="radio"]{
