@@ -1,117 +1,271 @@
 *{
-    margin:0px;
-    padding: 0px;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-html{
-    height: 100%;
-}
+
+
+
 body{
-    height: 100%;
+    background-color: #5cc29f;
 }
 
 .parent{
-    display: grid;
-    grid-template-columns: repeat(12,1fr);
-    grid-template-rows: repeat(12,1fr);
-    height: 100%;
     width: 100vw;
-    background-image: url("../images/greeting.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
+    height: 100vh;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
 
-.vector-div{
-    grid-column: 1/7;
-    grid-row: 1/13;
 }
 
 .form-div{
-    grid-row: 1/13;
-    grid-column: 7/13;
-    padding: 50px 20%;
-    position: relative;
-}
-
-.form{
-    height: 50%;
-    width: 50%;
-    /*border: solid crimson;*/
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: space-between;
-    padding: 20px 10px;
-    align-items: center;
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    min-width: 200px;
+    padding: 30px;
     overflow: auto;
     margin: auto;
     position: absolute;
     top: 0; left: 0; bottom: 0; right: 0;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.75);
-    box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);
-    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
 }
 
-.name-form{
+.existPara{
+    width: 100%;
+    height: 2%;
+}
+
+form{
+    width: 100%;
+    height: 70%;
+    color: #00002e;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.logo{
+    height: 20%;
+}
+
+.name-form,.submitDiv{
+    width: 100%;
+    height:25%;
     position: relative;
-    height: 50px;
-    width: 100%;
+
+    /*border: solid black 1px;*/
+
+}
+.name-form div{
+    height: 40%;
+
+}
+
+.submitDiv div{
+    height: 70%;
+}
+.name-form div, .submitDiv div{
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    /*border: solid blue 1px;*/
+
+}
+
+.logo_img{
+    height: 100%;
+    width: 30%;
+    margin: 0 auto;
     overflow: hidden;
-
 }
 
-.name-form input{
-    height: 100%;
-    padding-top: 20px;
-    color: #595f6e;
+
+
+.name-form div input{
     width: 100%;
+    height: 100%;
+    border: 1px grey solid;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    color:#00002e ;
+}
+
+.submitDiv div input{
+    width: 250px;
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+    background-color: #00002e;
+    color: white;
     border: none;
-    outline: none;
+    border-radius: 15px;
+    box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+    font-weight: bold;
+    font-size: 16px;
 }
 
-.name-form label{
-    pointer-events: none;
-    border-bottom: 1px solid black;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
+.submitDiv div input:hover{
+    background-color: #5cc29f;
+    color:white ;
+    font-weight: bold;
+    font-size: 16px;
 }
 
-.name-form label::after{
-    content: "";
-    position: absolute;
-    left: 0px;
-    bottom: -1px;
-    height: 100%;
-    width: 100%;
-    border-bottom: 3px solid green ;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-}
 
-.content-name{
-    position: absolute;
-    bottom: 5px;
-    left: 0px;
-    transition: all 0.3s ease;
-}
+@media only screen and (min-width: 1025px) {
 
-.name-form input:focus + .label-name .content-name, .name-form input:valid + .label-name .content-name{
-    transform: translateY(-100%);
-    color: green;
-}
 
-.name-form input:focus + .label-name::after, .name-form input:valid + .label-name::after{
-    transform: translateX(0%);
-}
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-#button{
-    width: 150px;
-    height: 50px;
+    .buttonDiv{
+        width: 100%;
+        margin-bottom: 4px;
+    }
+    .button:hover{
+        background-color: #5cc29f;
+        color:white ;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .button{
+        width: 250px;
+        display: block;
+        margin: 0 auto;
+        background-color: #00002e;
+        color: white;
+        border: none;
+        border-radius: 15px;
+        box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    button{
+        height: 50px;
+    }
+
+    a{
+        text-decoration: none;
+    }
+    body{
+        background-color: #5cc29f;
+    }
+    .parent{
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        padding-top: 30px;
+        padding-bottom: 30px;
+
+    }
+
+    .form-div{
+        background-color: white;
+        width: 40%;
+        height: 500px;
+        min-width: 200px;
+        padding: 30px;
+        overflow: auto;
+        margin: auto;
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        border-radius: 5px;
+        box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+    }
+    .existPara{
+        width: 100%;
+        height: 2%;
+    }
+
+    form{
+        width: 100%;
+        height: 70%;
+        color: #00002e;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .logo{
+        height: 20%
+    }
+
+    .name-form,.submitDiv{
+        width: 100%;
+        height:25%;
+        position: relative;
+
+        /*border: solid black 1px;*/
+
+    }
+    .name-form div{
+        height: 40%;
+
+    }
+
+    .submitDiv div{
+        height: 70%;
+    }
+    .name-form div, .submitDiv div{
+        overflow: auto;
+        margin: auto;
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        /*border: solid blue 1px;*/
+
+    }
+
+    .logo_img{
+        height: 100%;
+        width: 30%;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    .logo_img img{
+        height: 100%;
+        width:100%;
+    }
+
+    .name-form div input{
+        width: 100%;
+        height: 100%;
+        border: 1px grey solid;
+        border-radius: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 16px;
+        color:#00002e ;
+    }
+
+    .submitDiv div input{
+        width: 250px;
+        height: 100%;
+        margin: 0 auto;
+        display: block;
+        background-color: #00002e;
+        color: white;
+        border: none;
+        border-radius: 15px;
+        box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .submitDiv div input:hover{
+        background-color: #5cc29f;
+        color:white ;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
 }

@@ -3,15 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="../static/css/input.css" th:href="@{/css/input.css}">
 </head>
 <body>
-<div>
+    <div class="parent">
+        <div class="form-div">
     <p th:text="${usernamedoesnotmatch}"></p>
     <form action="#" th:action="@{/login}" th:object="${login}" method="post">
-        <input placeholder="Username" type="text" th:field="*{userName}">
-        <input placeholder="Password" type="password" th:field="*{password}">
-        <input type="submit" value="Submit">
+        <div class="inputHolder">
+            <input placeholder="Username" type="text" th:field="*{userName}">
+        </div>
+        <div class="inputHolder">
+            <input placeholder="Password" type="password" th:field="*{password}">
+        </div>
+        <div class="buttonDiv">
+            <input class="button" type="submit" value="Login">
+        </div>
+        <div class="buttonDiv">
+            <a href='signUp.html.html' th:href="@{/}"><button class="button">Sign up</button></a>
+        </div>
+
     </form>
+        </div>
 </div>
 </body>
 </html>

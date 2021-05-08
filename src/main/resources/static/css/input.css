@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+.parent{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: #5cc29f;
+    position: relative;
+}
+
+.form-div{
+    background-color: white;
+    width: 40%;
+    height: 70%;
+    min-width: 200px;
+    padding: 30px;
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    border-radius: 5px;
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+}
+
+.inputHolder{
+    margin-bottom: 20px;
+}
+
+input{
+    width: 100%;
+    height: 50px;
+    border: 1px grey solid;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    color:#00002e ;
+}
+
+.button{
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+    background-color: #00002e;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+button{
+    height: 50px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.button:hover{
+    background-color: #5cc29f;
+    color:white ;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.buttonDiv{
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+form{
+    margin-top: 60px;
+}

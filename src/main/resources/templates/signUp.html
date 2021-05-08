@@ -7,31 +7,37 @@
 </head>
 <body>
     <div class="parent">
-        <div class="vector-div">
-
-        </div>
         <div class="form-div">
-            <p th:text="${userExist}"></p>
+            <div class="logo">
+                <div class="logo_img">
+                    <img src="../static/images/kunai.svg" th:src="@{/images/kunai.svg}"/>
+                </div>
+            </div>
+            <p th:text="${userExist}" class="existPara"></p>
             <form class="form" action="#" th:action="@{/}" th:object="${user}" method="post">
                 <div class="name-form">
-                    <input id="username" type="text" th:field="*{userName}" required autocomplete="off"/>
-                    <label for="username" class="label-name">
-                        <span class="content-name">Username</span>
-                    </label>
+                    <div>
+                        <input placeholder="Username" id="username" type="text" th:field="*{userName}" required autocomplete="off"/>
+                    </div>
                 </div>
                 <div class="name-form">
-                    <input id="email" type="email" th:field="*{email}" required autocomplete="off"/>
-                    <label for="email" class="label-name">
-                        <span class="content-name">Email</span>
-                    </label>
+                    <div>
+                        <input placeholder="Email" id="email" type="email" th:field="*{email}" required autocomplete="off"/>
+                    </div>
                 </div>
                 <div class="name-form">
-                    <input id="password" type="password" th:field="*{password}" required autocomplete="off"/>
-                    <label for="password" class="label-name">
-                        <span class="content-name">Password</span>
-                    </label>
+                    <div>
+                        <input placeholder="Password" id="password" type="password" th:field="*{password}" required autocomplete="off"/>
+                    </div>
                 </div>
-                <input type="submit" value="Submit" id="button"/>
+                <div class="submitDiv">
+                    <div>
+                        <input type="submit" value="Sign in" id="button"/>
+                    </div>
+                </div>
+                <div class="buttonDiv">
+                    <a href='login.html.html' th:href="@{/login}"><button class="button">Login</button></a>
+                </div>
             </form>
         </div>
     </div>

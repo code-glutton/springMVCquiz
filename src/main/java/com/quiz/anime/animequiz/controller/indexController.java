@@ -43,17 +43,21 @@ public class indexController {
 
     @PostMapping("/")
     public String greetingSubmit(@Valid @ModelAttribute User user, Model model, BindingResult bindingResult) {
-        Optional<User> userGotten = addUserRepo.findByUserName(user.getUserName());
-        if(userGotten.isPresent()){
-            System.out.println(true);
-            model.addAttribute("userExist",new String("username Exists"));
+        if(bindingResult.hasErrors()){
             return "signUp";
         }else{
-            addUserRepo.save(user);
-            System.out.println(false);
-            model.addAttribute("user", user);
-            addUserRepo.save(user);
-            return "redirect:/login";
+            Optional<User> userGotten = addUserRepo.findByUserName(user.getUserName());
+            if(userGotten.isPresent()){
+                System.out.println(true);
+                model.addAttribute("userExist",new String("username Exists"));
+                return "signUp";
+            }else{
+                addUserRepo.save(user);
+                System.out.println(false);
+                model.addAttribute("user", user);
+                addUserRepo.save(user);
+                return "redirect:/login";
+            }
         }
 
 
