@@ -1,55 +1,60 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.com">
 <head>
-    <meta charset="UTF-8">
-    <title>Quiz</title>
-    <link rel="stylesheet" href="../static/css/quiz.css" th:href="@{/css/quiz.css}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome | Osas Quiz</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" type="image/png" href="../static/images/favi/favicon-16x16.png" th:href="@{/images/favi/favicon-16x16.png}">
+    <link rel="stylesheet" href="../static/css/normalize.css" th:href="@{/css/normalize.css}"/>
+    <link rel="stylesheet" href="../static/css/small.css" th:href="@{/css/small.css}"/>
+    <link rel="stylesheet" href="../static/css/medium.css" th:href="@{/css/medium.css}"/>
+    <link rel="stylesheet" href="../static/css/large.css" th:href="@{/css/large.css}">
 </head>
-<body>
+<body class="row">
 <script th:inline="javascript">
     var nameJs = [[${user}]];
 </script>
-<div id='main'>
-    <div id="timer">
-        <div id="timeDisp">time</div>
-    </div>
-    <div class="header">
-        <h2 id="header">lorem ipsum</h2>
-    </div>
-    <form id="quizReg">
-        <div class="contain">
-            <div class="containDiv">
-                <input type="radio" id="male" name="gender" value="male">
-                <label for="male">Male</label><br>
-            </div>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<header class="small-12">
+    <nav class="limiting ">
+        <div>
+            <a href="index.html" th:href="@{/index}"><img src="../static/images/kunaiLogo.svg" th:href="@{/images/kunaiLogo.svg}" alt="quiz app logo"/></a>
+            <button id="hamburgerBtn">&#9776;</button>
         </div>
-        <div class="contain">
-            <div class="containDiv">
-                <input type="radio" id="male1" name="gender" value="male">
-                <label for="male1">Male</label><br>
-            </div>
+
+        <ul id="navUl">
+            <li> <a href="index.html">Sign Up</a></li>
+            <li> <a href="home.html">Leaderboard</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="small-12 limiting">
+    <div class="mainContainer row-quiz">
+        <div class="mainContainerNav small-12-quiz">
+            <p id="mainContainerNavQ"></p>
+            <p id="mainContainerNavTimer"></p>
         </div>
-        <div class="contain">
-            <div class="containDiv">
-                <input type="radio" id="male2" name="gender" value="male">
-                <label for="male2">Male</label><br>
-            </div>
+        <div class="mainContainerQuestion small-12-quiz">
+            <p id="header"></p>
         </div>
-        <div class="contain">
-            <div class="containDiv">
-                <input type="radio" id="male3" name="gender" value="male">
-                <label for="male3">Male</label><br>
-            </div>
+        <div id="quizReg" class="mainContainerAnswer small-12-quiz row-quiz">
+
         </div>
-    </form>
-    <div id="butto">
-        <div id="buttonGrp">
+
+        <div class="mainContainerBtn small-6-quiz">
             <button id="change">Next</button>
+        </div>
+        <div class="mainContainerBtn small-6-quiz">
             <button id="submit" th:onclick="getModelAttr(nameJs);">Submit</button>
         </div>
     </div>
-</div>
+</main>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script type="text/javascript" th:src="@{/js/index.js}"></script>
+<script src="../static/js/navbar.js" th:src="@{/js/navbar.js}"></script>
+<script src="../static/js/quiz.js" th:src="@{/js/quiz.js}"></script>
 </body>
 </html>

@@ -1,45 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.com">
 <head>
-    <meta charset="UTF-8">
-    <title>Sign Up or Log In</title>
-    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome | Osas Quiz</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" type="image/png" href="../static/images/favi/favicon-16x16.png" th:href="@{/images/favi/favicon-16x16.png}">
+    <link rel="stylesheet" href="../static/css/normalize.css" th:href="@{/css/normalize.css}"/>
+    <link rel="stylesheet" href="../static/css/small.css" th:href="@{/css/small.css}"/>
+    <link rel="stylesheet" href="../static/css/medium.css" th:href="@{/css/medium.css}"/>
+    <link rel="stylesheet" href="../static/css/large.css" th:href="@{/css/large.css}">
 </head>
-<body>
-    <div class="parent">
-        <div class="form-div">
-            <div class="logo">
-                <div class="logo_img">
-                    <img src="../static/images/kunai.svg" th:src="@{/images/kunai.svg}"/>
-                </div>
-            </div>
-            <p th:text="${userExist}" class="existPara"></p>
-            <form class="form" action="#" th:action="@{/}" th:object="${user}" method="post">
-                <div class="name-form">
-                    <div>
-                        <input placeholder="Username" id="username" type="text" th:field="*{userName}" required autocomplete="off"/>
-                    </div>
-                </div>
-                <div class="name-form">
-                    <div>
-                        <input placeholder="Email" id="email" type="email" th:field="*{email}" required autocomplete="off"/>
-                    </div>
-                </div>
-                <div class="name-form">
-                    <div>
-                        <input placeholder="Password" id="password" type="password" th:field="*{password}" required autocomplete="off"/>
-                    </div>
-                </div>
-                <div class="submitDiv">
-                    <div>
-                        <input type="submit" value="Sign in" id="button"/>
-                    </div>
-                </div>
-                <div class="buttonDiv">
-                    <a href='login.html.html' th:href="@{/login}"><button class="button">Login</button></a>
-                </div>
-            </form>
+<body class="row">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<header class="small-12">
+    <nav class="limiting">
+        <div>
+            <<a href="index.html"><img src="../static/images/kunaiLogo.svg" th:href="@{/images/kunaiLogo.svg}" alt="quiz app logo"/></a>
+            <button id="hamburgerBtn">&#9776;</button>
         </div>
-    </div>
+
+        <ul id="navUl">
+            <li> <a href="login.html" th:href="@{/login}">Log out</a></li>
+            <li> <a href="home.html" th:href="@{/leaderboard}">Leaderboard</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="small-12 limiting">
+    <img src="../static/images/kunaiLogo.svg" th:href="@{/images/kunaiLogo.svg}" alt="quiz app logo"/>
+    <h1>Welcome to Osas quiz app.</h1>
+    <p class="pDesign">Sign up here:</p>
+    <form id="formSignup" action="#" th:action="@{/}" th:object="${user}" method="post">
+        <p th:text="${userExist}" class="existPara"></p>
+        <p>
+            <input type="email" name="email" id="emailId" th:field="*{email}" required placeholder="Email">
+        </p>
+        <p>
+            <input type="text" name="username" id="usernameId" th:field="*{userName}" placeholder="Username" required>
+        </p>
+        <p>
+            <input type="password" name="password" id="passwordId" th:field="*{password}" required placeholder="Password">
+        </p>
+        <p>
+            <input type="submit" value="Signup" id="submitBtn">
+        </p>
+    </form>
+    <p class="pDesign">
+        Not new? <a href="login.html" th:href="@{/login}">Login</a>
+    </p>
+</main>
+<script src="../static/js/navbar.js" th:src="@{/js/navbar.js}"></script>
 </body>
 </html>
+

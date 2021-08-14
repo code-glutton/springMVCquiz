@@ -1,30 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.com">
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="../static/css/input.css" th:href="@{/css/input.css}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome | Osas Quiz</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" type="image/png" href="../static/images/favi/favicon-16x16.png" th:href="@{/images/favi/favicon-16x16.png}">
+    <link rel="stylesheet" href="../static/css/normalize.css" th:href="@{/css/normalize.css}"/>
+    <link rel="stylesheet" href="../static/css/small.css" th:href="@{/css/small.css}"/>
+    <link rel="stylesheet" href="../static/css/medium.css" th:href="@{/css/medium.css}"/>
+    <link rel="stylesheet" href="../static/css/large.css" th:href="@{/css/large.css}">
 </head>
-<body>
-    <div class="parent">
-        <div class="form-div">
-    <p th:text="${usernamedoesnotmatch}"></p>
-    <form action="#" th:action="@{/login}" th:object="${login}" method="post">
-        <div class="inputHolder">
-            <input placeholder="Username" type="text" th:field="*{userName}">
-        </div>
-        <div class="inputHolder">
-            <input placeholder="Password" type="password" th:field="*{password}">
-        </div>
-        <div class="buttonDiv">
-            <input class="button" type="submit" value="Login">
-        </div>
-        <div class="buttonDiv">
-            <a href='signUp.html.html' th:href="@{/}"><button class="button">Sign up</button></a>
+<body class="row">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<header class="small-12">
+    <nav class="limiting">
+        <div>
+            <a href="index.html"><img src="../static/images/kunaiLogo.svg" th:href="@{/images/kunaiLogo.svg}" alt="quiz app logo"/></a>
+            <button id="hamburgerBtn">&#9776;</button>
         </div>
 
+        <ul id="navUl">
+            <li> <a href="login.html" th:href="@{/login}">Log out</a></li>
+            <li> <a href="home.html" th:href="@{/leaderboard}">Leaderboard</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="small-12 limiting">
+    <img src="../static/images/kunaiLogo.svg" th:href="@{/images/kunaiLogo.svg}" alt="quiz app logo"/>
+    <h1>Welcome back.</h1>
+    <p class="pDesign">Login:</p>
+    <form id="loginForm" action="#" th:action="@{/login}" th:object="${login}" method="post">
+        <p th:text="${usernamedoesnotmatch}"></p>
+        <p>
+            <input placeholder="Username" type="text" th:field="*{userName}" name="username" id="usernameId">
+        </p>
+        <p>
+            <input type="password" name="password" id="passwordId" th:field="*{password}" placeholder="Password">
+        </p>
+        <p>
+            <input type="submit" value="login" id="submitBtn">
+        </p>
     </form>
-        </div>
-</div>
+    <p class="pDesign">
+        Don't have an account? <a href="index.html" th:href="@{/}"> Sign up</a>
+    </p>
+</main>
+<script src="./js/navbar.js"></script>
 </body>
 </html>

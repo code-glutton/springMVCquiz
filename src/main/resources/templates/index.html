@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.com">
 <head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
-    <link rel="stylesheet" href="../static/css/index.css" th:href="@{/css/index.css}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome | Osas Quiz</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" type="image/png" href="../static/images/favi/favicon-16x16.png" th:href="@{/images/favi/favicon-16x16.png}">
+    <link rel="stylesheet" href="../static/css/normalize.css" th:href="@{/css/normalize.css}"/>
+    <link rel="stylesheet" href="../static/css/small.css" th:href="@{/css/small.css}"/>
+    <link rel="stylesheet" href="../static/css/medium.css" th:href="@{/css/medium.css}"/>
+    <link rel="stylesheet" href="../static/css/large.css" th:href="@{/css/large.css}">
 </head>
-<body>
-<a href='login.html' th:href="@{/login}"><button>Log Out</button></a>
-<a href='leaderBoard.html' th:href="@{/leaderboard}"><button>View LeaderBoard</button></a>
-<div id="home">
-    <a href='quiz.html' th:href="@{|/home/${user.userName}/quiz|}"><button id="start" >Start Quiz</button></a>
-    <p>HighScore: <span th:text="${user.score}"></span></p>
-</div>
+<body class="row homeMain">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<header class="small-12 mainHeader">
+    <nav class="limiting">
+        <div>
+            <a href="index.html"><img src="../static/images/kunaiLogo.svg" th:href="@{/images/kunaiLogo.svg}" alt="quiz app logo"/></a>
+            <button id="hamburgerBtn">&#9776;</button>
+        </div>
+
+        <ul id="navUl">
+            <li> <a href="login.html" th:href="@{/login}">Log out</a></li>
+            <li> <a href="home.html" th:href="@{/leaderboard}">Leaderboard</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="small-12 limiting">
+    <h1 id="highscore"><span th:text="${user.score}"></span></h1>
+    <p id="highscorePara">Highscore</p>
+    <a href="quiz.html" th:href="@{|/home/${user.userName}/quiz|}"><button id="startQuizBtn">Start Quiz</button></a>
+</main>
+<script src="../static/js/navbar.js" th:src="@{/js/navbar.js}"></script>
 </body>
 </html>
